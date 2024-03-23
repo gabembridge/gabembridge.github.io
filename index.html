@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tooltip Example</title>
+<style>
+  .tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black; /* dotted underline */
+    cursor: pointer;
+  }
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px; /* center the tooltip */
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+  }
+</style>
+</head>
+<body>
+
+<p>Hover over the word <span class="tooltip" onmouseover="showTooltip()" onmouseout="hideTooltip()">iom-leasachan<span class="tooltiptext" id="myTooltip">circumfix</span></span> for a hint.</p>
+
+<script>
+function showTooltip() {
+  document.getElementById("myTooltip").style.visibility = "visible";
+}
+
+function hideTooltip() {
+  document.getElementById("myTooltip").style.visibility = "hidden";
+}
+</script>
+
+</body>
+</html>
